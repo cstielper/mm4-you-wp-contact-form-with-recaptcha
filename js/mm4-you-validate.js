@@ -124,7 +124,7 @@
 			}
 		}
 
-		captchaResponse = grecaptcha.getResponse();
+		var captchaResponse = grecaptcha.getResponse();
 		if(captchaResponse.length === 0) {
 			errors.push(['recaptcha', '<span>The <strong><em>Anti-Spam</em></strong> field is required. Please check the box to continue.</span>']);
 		}
