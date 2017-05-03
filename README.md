@@ -1,4 +1,6 @@
 # WordPress Simple Contact Form Plugin With Google ReCAPTCHA Integration
+Version: 3.0
+
 Follow the steps below to include/deploy this plugin with your WordPress theme:
 
 1. Add all files to a directory in your theme's root folder
@@ -12,7 +14,7 @@ Once you have successfully included the plugin in your theme, you should see a m
 3. Page ID number of the "Thank You" page
 4. Fields to enter your public and private ReCAPTCHA API keys. These keys can be obtained at [here](https://www.google.com/recaptcha/admin)
 
-## Outputting the form in your template files
+## Outputting the Form in Your Template Files
 You can use the following code to output the contact form into your page/post template files:
 
 ~~~~
