@@ -38,6 +38,7 @@ function mm4_you_cf_admin_init() {
 	 * */
 	add_settings_field( 'form-email-to', __( 'Email address(es) for form submission (separate multiple email addresses with a comma):' ), 'email_to_callback', 'mm4-you-contact-form-options', 'basic-form-settings' );
 	add_settings_field( 'form-subject', __( 'Subject line for form submission:' ), 'subject_line_callback', 'mm4-you-contact-form-options', 'basic-form-settings' );
+	add_settings_field( 'form-email-from', __( 'Email address that the form should come from:' ), 'email_from_callback', 'mm4-you-contact-form-options', 'basic-form-settings' );
 	add_settings_field( 'form-redirect', __( 'Enter the page ID of the contact form "Thank You" page. This is the page users will see after the form is submitted:' ), 'thank_you_page_callback', 'mm4-you-contact-form-options', 'basic-form-settings' );
 	
 	add_settings_field( 'recaptcha-public-key', __( 'ReCAPTCHA public key:' ), 'recaptcha_public_key_callback', 'mm4-you-contact-form-options', 'recaptcha-settings' );
@@ -80,6 +81,13 @@ function email_to_callback() {
 function subject_line_callback() {
 	$settings = (array) get_option( 'mm4-you-cf-settings' );
 	$field = "form-subject";
+	$value = esc_attr( $settings[$field] );
+	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' />";
+}
+
+function email_from_callback() {
+	$settings = (array) get_option( 'mm4-you-cf-settings' );
+	$field = "form-email-from";
 	$value = esc_attr( $settings[$field] );
 	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' />";
 }
