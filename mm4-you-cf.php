@@ -125,7 +125,7 @@ function mm4_you_contact_form() {
 	$public_key = $options_arr['recaptcha-public-key'];
 	$form_action = get_permalink($options_arr['form-thank-you']); ?>
 
-	<form name="contact-form" method="POST" action="<?php echo $form_action; ?>" novalidate>
+	<form name="contact-form" id="contact-form" method="POST" action="<?php echo $form_action; ?>" novalidate>
 		<input type="hidden" value="<?php echo $subject_line; ?>" name="subject" id="subject">
 		<label for="first-name">
 			<input type="text" name="first-name" id="first-name" class="required" data-error-label="First Name" placeholder="NAME">
