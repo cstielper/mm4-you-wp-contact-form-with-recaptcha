@@ -100,19 +100,17 @@ function thank_you_page_callback() {
 }
 
 function recaptcha_public_key_callback() {
-	if(!is_admin()): $disabled = 'disabled'; endif;
 	$settings = (array) get_option( 'mm4-you-cf-settings' );
 	$field = "recaptcha-public-key";
 	$value = esc_attr( $settings[$field] );
-	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' $disabled />";
+	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' />";
 }
 
 function recaptcha_private_key_callback() {
-	if(!is_admin()): $disabled = 'disabled'; endif;
 	$settings = (array) get_option( 'mm4-you-cf-settings' );
 	$field = "recaptcha-private-key";
 	$value = esc_attr( $settings[$field] );
-	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' $disabled />";
+	echo "<input type='text' name='mm4-you-cf-settings[$field]' value='$value' />";
 }
 
 // Grab the settings from our options page
