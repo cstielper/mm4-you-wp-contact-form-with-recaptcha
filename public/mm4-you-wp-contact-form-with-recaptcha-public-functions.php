@@ -37,4 +37,4 @@ function mm4_you_contact_form_thank_you_page() {
 		require __DIR__ . '/../admin/mm4-you-wp-contact-form-with-recaptcha-contact.php';
 	}
 }
-add_action('wp_head', 'mm4_you_contact_form_thank_you_page');
+add_action('wp_head', 'mm4_you_contact_form_thank_you_page', 1);
