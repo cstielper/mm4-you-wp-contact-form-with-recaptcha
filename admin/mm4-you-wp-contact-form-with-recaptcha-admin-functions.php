@@ -1,5 +1,5 @@
 <?php
-require_once( 'class-rational-option-pages.php' );
+require_once( 'class-mm4-you-contact-options.php' );
 
 $pages = array(
 	'mm4-you-wp-contact-form-with-recaptcha-options'	=> array(

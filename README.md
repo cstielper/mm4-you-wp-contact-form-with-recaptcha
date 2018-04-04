@@ -1,14 +1,14 @@
 # WordPress Simple Contact Form Plugin With Google ReCAPTCHA Integration
-Version: 4.0
 
-Follow the steps below to install this plugin:
+![Version 4.1.0](https://img.shields.io/badge/Version-4.1.0-brightgreen.svg)
+
+## Installation
 
 1. Clone this repo to your local machine
 2. Zip the plugin folder and upload it through the WP Dashboard, or drag the plugin folder into the /wp-content/plugins/ directory
 3. Activate the plugin from the "Plugins" screen in the WP Dashboard
 
 ## Plugin Options
-Once you have successfully installed/activated the plugin, you should see a menu item under "Settings" called "MM4 Contact Form." Click on this to configure the following options:
 
 1. Email address(es) the form should submit to
 2. Subject line of the email that is sent with the form
