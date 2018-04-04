@@ -6,7 +6,7 @@
 	
 	// Form "name" attribute that you want to pass to the validator
 	// var form = document.forms['YOUR FORM NAME HERE'];
-	var form = document.forms['contact-form'];
+	var form = document.forms['mm4-contact-form'];
 
 	// Message box where we want the errors to display.
 	// If you have set your "form" variable correctly, you shouldn't have to change this.
@@ -98,7 +98,7 @@
 				}
 				// If there is not another field with this name checked after looping, push an error to errors[]
 				if(checked === false) {
-					errors.push([checkboxes[0].name, '<span>The <strong><em>' + checkboxes[0].getAttribute('data-error-label') + '</em></strong> field is required.</span>']);
+					errors.push([checkboxes[0].name, '<div>The <span>' + checkboxes[0].getAttribute('data-error-label') + '</span> field is required.</div>']);
 				}
 			} else if(required[i][0].type === 'radio') {
 				// If we come to a radio button in required[], reset our "checked" variable from any previous loops.
@@ -117,16 +117,16 @@
 				}
 				// If there is not another field with this name checked after looping, push an error to errors[]
 				if(checked === false) {
-					errors.push([radioBtns[0].name, '<span>The <strong><em>' + radioBtns[0].getAttribute('data-error-label') + '</em></strong> field is required.</span>']);
+					errors.push([radioBtns[0].name, '<div>The <span>' + radioBtns[0].getAttribute('data-error-label') + '</span> field is required.</div>']);
 				}
 			} else if(required[i][0].value === '') {
-				errors.push([required[i][0].name, '<span>The <strong><em>' + required[i][0].getAttribute('data-error-label') + '</em></strong> field is required.</span>']);
+				errors.push([required[i][0].name, '<div>The <span>' + required[i][0].getAttribute('data-error-label') + '</span> field is required.</div>']);
 			}
 		}
 
 		var captchaResponse = grecaptcha.getResponse();
 		if(captchaResponse.length === 0) {
-			errors.push(['recaptcha', '<span>The <strong><em>Anti-Spam</em></strong> field is required. Please check the box to continue.</span>']);
+			errors.push(['recaptcha', '<div>The <span>Anti-Spam</span> field is required. Please check the box to continue.</div>']);
 		}
 
 		// At this point, we should have an array with a nested array for each required field that is empty.
@@ -137,7 +137,7 @@
 		var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;	
 		for(i = 0; i < form.length; i++) {
 			if(form[i].type === 'email' && form[i].value !== '' && !form[i].value.match(emailRegex)) {
-				errors.push([form[i].name, '<span>Please enter a valid email address for the <strong><em>' + form[i].getAttribute('data-error-label') + '</em></strong> field.</span>']);
+				errors.push([form[i].name, '<div>Please enter a valid email address for the <span>' + form[i].getAttribute('data-error-label') + '</span> field.</div>']);
 			}
 		}
 
