@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 	$name = strip_tags($_POST["first-name"]);
 	$email= strip_tags($_POST["email-address"]);
 	$phone = strip_tags($_POST["primary-phone"]);
-	$message = strip_tags($_POST["message"]);
+	$message = $_POST["message"];
 	
 	if(!$captcha){
 		echo 'Please go back and check the spam protection checkbox.';
