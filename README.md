@@ -1,6 +1,6 @@
 # WordPress Simple Contact Form Plugin With Google ReCAPTCHA Integration
 
-![Version 4.1.0](https://img.shields.io/badge/Version-4.1.0-brightgreen.svg)
+![Version 4.2.0](https://img.shields.io/badge/Version-4.2.0-brightgreen.svg)
 
 ## Installation
 

@@ -7,7 +7,7 @@ $pages = array(
 		'parent_slug' => 'options-general.php',
 		'sections'		=> array(
 			'section-one' => array(
-				'title'			=> __( 'Basic Form Settings', 'mm4-you-wp-contact-form-with-recaptcha' ),
+				'title'			=> __( 'Delivery Settings', 'mm4-you-wp-contact-form-with-recaptcha' ),
 				'fields' => array(
 					'email-to'			=> array(
 						'title'			=> __( 'To Address', 'mm4-you-wp-contact-form-with-recaptcha' ),
@@ -19,11 +19,26 @@ $pages = array(
 						'type'			=> 'text',
 						'text' => 'Subject line for form submission email.'
 					),
+				),
+			),
+			'section-two' => array(
+				'title'			=> __( 'Sender Settings', 'mm4-you-wp-contact-form-with-recaptcha' ),
+				'fields' => array(
 					'email-from'			=> array(
 						'title'			=> __( 'From Address', 'mm4-you-wp-contact-form-with-recaptcha' ),
 						'type'			=> 'text',
 						'text' => 'Email address that the form submission should come from.'
 					),
+					'name-from'			=> array(
+						'title'			=> __( 'From Name', 'mm4-you-wp-contact-form-with-recaptcha' ),
+						'type'			=> 'text',
+						'text' => 'Name that the form submission should come from.'
+					),
+				),
+			),
+			'section-three' => array(
+				'title'			=> __( 'WordPress Settings', 'mm4-you-wp-contact-form-with-recaptcha' ),
+				'fields' => array(
 					'thank-you-id'			=> array(
 						'title'			=> __( 'Thank You page ID', 'mm4-you-wp-contact-form-with-recaptcha' ),
 						'type'			=> 'text',
@@ -31,7 +46,7 @@ $pages = array(
 					),
 				),
 			),
-			'section-two' => array(
+			'section-four' => array(
 				'title'			=> __( 'ReCAPTCHA Settings', 'mm4-you-wp-contact-form-with-recaptcha' ),
 				'fields' => array(
 					'public-key'			=> array(
