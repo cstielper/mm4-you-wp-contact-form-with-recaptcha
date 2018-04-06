@@ -10,13 +10,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 	$secret_key = $options['recaptcha_private_key'];
 	$captcha = $_POST['g-recaptcha-response'];
 	
-	$name = $_POST["first-name"];
-	$email= $_POST["email-address"];
-	$phone = $_POST["primary-phone"];
-	$message = wpautop($_POST["message"]);
+	$name = sanitize_text_field($_POST["first-name"]);
+	$email= sanitize_email($_POST["email-address"]);
+	$phone = sanitize_text_field($_POST["primary-phone"]);
+	$message = wpautop(esc_textarea($_POST["message"]));
 	
 	if(!$captcha){
-		echo 'Please go back and check the spam protection checkbox.';
+		output_error( 'Please go back and check the spam protection checkbox.' );
 		exit();
 	}
 	
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 				<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 			</head>
 			<body>
-				<div style='background-color: #f7f8f9; font-family: sans-serif; padding: 20px;'>
+				<div style='background-color: #f7f7f7; font-family: sans-serif; padding: 20px;'>
 					<h3>You have received a form submission:</h3>	
 					<em>Name:</em> $name<br>
 					<em>Email:</em> $email<br>
@@ -47,14 +47,27 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
   $headers[] = 'Content-type: text/html; charset="UTF-8' . "\r\n";
 	
 	if($response.success == false) {
-		echo 'We\'re sorry, but you appear to be a spambot.';
+		output_error( 'We\'re sorry, but you appear to be a spambot.' );
 		exit();
 	} else {
 		wp_mail( $recipients, $subject, $message, $headers );
 	}
 } else {
-	echo 'This page cannot be accessed directly.';
+	output_error( 'We\'re sorry, but this page cannot be accessed directly.' );
 	exit();
 }
 
-?>
+function output_error( $error ) { ?>
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+			<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+		</head>
+		<body style='background-color: #ececec; font-family: sans-serif; padding: 20px;'>
+			<div>
+				<h3><?php echo $error; ?></h3>	
+			</div>
+		</body>
+	</html>
+<?php }
