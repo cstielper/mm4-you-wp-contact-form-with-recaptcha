@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 	$secret_key = $options['recaptcha_private_key'];
 	$captcha = $_POST['g-recaptcha-response'];
 	
-	$name = sanitize_text_field($_POST["first-name"]);
-	$email= sanitize_email($_POST["email-address"]);
-	$phone = sanitize_text_field($_POST["primary-phone"]);
-	$message = wpautop(esc_textarea($_POST["message"]));
+	$name = stripslashes_deep(sanitize_text_field($_POST["first-name"]));
+	$email= stripslashes_deep(sanitize_email($_POST["email-address"]));
+	$phone = stripslashes_deep(sanitize_text_field($_POST["primary-phone"]));
+	$message = stripslashes_deep(wpautop(esc_textarea($_POST["message"])));
 	
 	if(!$captcha){
 		output_error( 'Please go back and check the spam protection checkbox.' );
@@ -63,6 +63,7 @@ function output_error( $error ) { ?>
 		<head>
 			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 			<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+			<title>Error</title>
 		</head>
 		<body style='background-color: #ececec; font-family: sans-serif; padding: 20px;'>
 			<div>
