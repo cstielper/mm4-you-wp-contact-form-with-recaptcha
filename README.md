@@ -1,6 +1,6 @@
 # WordPress Simple Contact Form Plugin With Google ReCAPTCHA Integration
 
-![Version 4.2.0](https://img.shields.io/badge/Version-4.2.0-brightgreen.svg)
+![Version 4.3.0](https://img.shields.io/badge/Version-4.3.0-brightgreen.svg)
 
 ## Installation
 
@@ -13,8 +13,9 @@
 1. Email address(es) the form should submit to
 2. Subject line of the email that is sent with the form
 3. Email address the form will come from
-4. Page ID number of the "Thank You" page
-5. Fields to enter your public and private ReCAPTCHA API keys. These keys can be obtained at [here](https://www.google.com/recaptcha/admin)
+4. Name that the form will come from
+5. Page ID number of the "Thank You" page
+6. Fields to enter your public and private ReCAPTCHA API keys. These keys can be obtained at [here](https://www.google.com/recaptcha/admin)
 
 ## Outputting the Form
 You can use the following shortcode to output the form:
