@@ -1,6 +1,7 @@
 <?php
 
 function mm4_you_contact_form() {
+	ob_start();
 	$options = get_option( 'mm4-you-wp-contact-form-with-recaptcha-options', array() );
 	
 	wp_enqueue_script( 'mm4-recaptcha', '//www.google.com/recaptcha/api.js', NULL, NULL, TRUE );
@@ -23,7 +24,8 @@ function mm4_you_contact_form() {
 		<div class="msg-box"></div>
 		<input type="submit" value="Submit">
 	</form>
-<?php }
+<?php return ob_get_clean();
+}
 
 add_shortcode('mm4-cf', 'mm4_you_contact_form');
 
