@@ -35,7 +35,7 @@ function mm4_you_contact_form_thank_you_page() {
 	$ID = $post->ID;
 	$options = get_option( 'mm4-you-wp-contact-form-with-recaptcha-options', array() );
 	$ty_page = $options['thank_you_page_id'];
-	if( $ID == $ty_page ) {
+	if( $ty_page && $ID == $ty_page ) {
 		require __DIR__ . '/../admin/mm4-you-wp-contact-form-with-recaptcha-contact.php';
 	}
 }
